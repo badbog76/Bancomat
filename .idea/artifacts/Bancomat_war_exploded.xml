@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Bancomat:war exploded">
+    <output-path>$PROJECT_DIR$/target/bancomat</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Bancomat" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:9.2-1003-jdbc4" />
+          <element id="library" level="project" name="Maven: org.json:json:20160810" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/bancomat/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="Bancomat/web/Web" />
+    </root>
+  </artifact>
+</component>

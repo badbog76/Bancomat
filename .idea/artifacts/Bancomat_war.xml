@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Bancomat:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="bancomat.war">
+      <element id="artifact" artifact-name="Bancomat:war exploded" />
+    </root>
+  </artifact>
+</component>
