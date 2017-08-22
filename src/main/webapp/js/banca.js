@@ -23,11 +23,11 @@ function listProductsUL1(productsjson) {
         if(p.bani!=0)
         {
             if(p.tip == 0) {
-                var el = '<li>' + p.data +'&nbsp;&nbsp;&nbsp;&nbsp;+'+ p.bani + '<li>';
+                var el = '<li style="list-style-type: none">' + p.data +'&nbsp;&nbsp;&nbsp;&nbsp;+'+ p.bani + '<li>';
                 listHtml = listHtml + el;
             }
             if(p.tip == 1){
-                var el = '<li>' + p.data +'&nbsp;&nbsp;&nbsp;&nbsp;-'+ p.bani + '<li>';
+                var el = '<li style="list-style-type: none">' + p.data +'&nbsp;&nbsp;&nbsp;&nbsp;-'+ p.bani + '<li>';
                 listHtml=listHtml+el;
 
             }
@@ -46,27 +46,16 @@ function listOfProducts1() {
         listProductsUL1(response.productsjson);
     });
 }
-// buggy one
-// accepts empty strings
-// accepts html code (script injections as well)
-/// etc
+
+
 function insertProduct() {
-    var name = document.getElementById('nume').value;
-    var price = document.getElementById('tip').value;
+    var bani = document.getElementById('bani').value;
     $.ajax({
-        url: 'productsurl?action=insert&nume='+name+'&bani='+price
+        url: 'productsurl?action=insert&bani='+bani
     }).done(function (response) {
-        location.href = "insertProduct.html";
+        location.href = "meniu.html";
     });
 }
 
-function login() {
-    var u = document.getElementById('user').value;
-    var p = document.getElementById('pwd').value;
-    $.ajax({
-        url: 'login?user='+u+'&pwd='+p
-    }).done(function (response) {
-        location.href = "loginForm.html";
-    });
-}
+
 

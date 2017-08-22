@@ -7,15 +7,15 @@ public class Product {
     private String nume;
     private double bani;
     private double tip;
-    private Date data;
+    private String data;
     private double sold;
     private double achitat;
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 

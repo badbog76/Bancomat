@@ -20,7 +20,7 @@ public class LogoutServlet extends HttpServlet {
         s.removeAttribute(USERNAME);
         s.removeAttribute(USERNAMEID);
 
-        response.sendRedirect("todolist.html");
+        response.sendRedirect("login.html");
 
     }
 

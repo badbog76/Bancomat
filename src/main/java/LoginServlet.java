@@ -38,10 +38,11 @@ public class LoginServlet extends HttpServlet {
 
         if (gasit != -1) {
             System.out.println("LoginServlet: user found");
-
+            HttpSession s = request.getSession();
+            s.setAttribute("isLoggedIn", "brrr");
             // userul exista in db, deci il autentific
-            HttpSession session = request.getSession(true);
-            session.setAttribute(LogoutServlet.USERNAME, user);
+           HttpSession session = request.getSession(true);
+           session.setAttribute(LogoutServlet.USERNAME, user);
             session.setAttribute(LogoutServlet.USERNAMEID, gasit);
             response.sendRedirect("meniu.html");
         } else {
