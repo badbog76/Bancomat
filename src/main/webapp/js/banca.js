@@ -49,13 +49,22 @@ function listOfProducts1() {
 
 
 function insertProduct() {
-    var bani = document.getElementById('bani').value;
+    var bani =document.getElementById('bani').value ;
     $.ajax({
         url: 'productsurl?action=insert&bani='+bani
     }).done(function (response) {
-        location.href = "meniu.html";
+         location.href="meniu.html"
     });
 }
+function retragereProduct() {
+    var bani =document.getElementById('bani').value ;
+    $.ajax({
+        url: 'productsurl?action=retragere&bani='+bani
+    }).done(function (response) {
+        location.href="meniu.html"
+    });
+}
+
 
 
 

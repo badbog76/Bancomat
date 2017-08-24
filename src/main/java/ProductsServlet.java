@@ -18,7 +18,14 @@ import java.util.*;
  */
 
 @WebServlet("/productsurl")
+
 public class ProductsServlet extends HttpServlet {
+    private static int a;
+
+    public static int getA() {
+        return a;
+    }
+
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("intra in servlet uite ma ");
@@ -42,24 +49,9 @@ public class ProductsServlet extends HttpServlet {
             HttpSession s = request.getSession();
             String val = (String)s.getAttribute("isLoggedIn");
             if(val!=null && val.equals("brrr")) {
-
                 System.out.println("esti logat");
-                LoginServlet ht= new LoginServlet();
-                String nameOfProduct = ht.getHt();
-                String priceOfProduct = request.getParameter("bani");
+                a=1;
 
-                DbAccessProduct db = new DbAccessProduct();
-
-                Product insert = new Product();
-                insert.setNume(nameOfProduct);
-                insert.setBani(Double.parseDouble(priceOfProduct));
-                insert.setTip(0);
-                insert.setAchitat(0);
-                DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                java.util.Date date = new java.util.Date();
-                insert.setData(dateFormat.format(date));
-                db.insertProduct(insert);
-                db.updateproducts(insert);
             }
             else
             {
